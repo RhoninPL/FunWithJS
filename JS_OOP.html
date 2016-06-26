@@ -1,0 +1,25 @@
+<html>
+
+<head>
+</head>
+
+<body>
+    <div id="person" style="text-align: center;">
+    </div>
+
+    <script lang="JavaScript">
+        // utworzenie klasy Person
+        var Person = function(variable) {
+            // alert(variable);
+            this.zmienna = variable;
+        };
+
+        // utworzenie obiektu 
+        var person1 = new Person("test");
+
+        var test = document.getElementById("person");
+        test.innerHTML = person1.zmienna;
+    </script>
+</body>
+
+</html>
