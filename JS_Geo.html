@@ -1,0 +1,38 @@
+<html>
+
+<head>
+</head>
+
+<body>
+    <div id="geo" style="text-align: center;">
+    </div>
+
+    <script lang="JavaScript">
+        var geo = document.getElementById("geo");
+
+        function addToPage(data) {
+            for (var key in data) {
+                geo.innerHTML = geo.innerHTML + data[key] + "<br />";
+            }
+        }
+        var request = new XMLHttpRequest();
+        //request.open('GET', 'http://ip-api.com/json/208.80.152.201', true);
+        request.open('GET', 'http://ip-api.com/json/?callback=', true);
+        request.onload = function() {
+            if (request.status >= 200 && request.status < 400) {
+                var data = JSON.parse(request.responseText);
+                addToPage(data);
+            } else {
+                geo.innerHTML = "Błąd podczas ładowania";
+            }
+        };
+
+        request.onerror = function() {
+            geo.innerHTML = "Błąd podczas ładowania";
+        };
+
+        request.send();
+    </script>
+</body>
+
+</html>
