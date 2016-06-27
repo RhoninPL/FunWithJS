@@ -9,16 +9,19 @@
 
     <script lang="JavaScript">
         // utworzenie klasy Person
-        var Person = function(variable) {
-            // alert(variable);
-            this.zmienna = variable;
+        var Person = function(name, lastName) {
+            this.name = name;
+            this.lastName = lastName;
         };
 
+        Person.prototype.fullName = function() {
+            return this.name + " " + this.lastName;
+        };
         // utworzenie obiektu 
-        var person1 = new Person("test");
+        var person1 = new Person("Madzia", "Nowak");
 
         var test = document.getElementById("person");
-        test.innerHTML = person1.zmienna;
+        test.innerHTML = person1.fullName();
     </script>
 </body>
 
