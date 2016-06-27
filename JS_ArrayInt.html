@@ -1,0 +1,42 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+</head>
+
+<body>
+    <div id="animals1" style="text-align: center;">
+        Pętla for
+    </div>
+    <div id="animals2" style="text-align: center;">
+        Pętla foreach
+    </div>
+    <div id="number" style="text-align: center;">
+        Liczba z stringa:
+    </div>
+    <script lang="JavaScript">
+        var animals = ["Cat", "Dog", "Mouse"];
+        var number = "324";
+        var animals1 = document.getElementById("animals1");
+        for (var i = 0; i < animals.length; i++) {
+            animals1.innerHTML = animals1.innerHTML + " " + animals[i];
+        }
+        var animals2 = document.getElementById("animals2");
+        animals.forEach(function(value, index, array) {
+            animals2.innerHTML = animals2.innerHTML + " " + value;
+        });
+        var divNumber = document.getElementById("number");
+        divNumber.innerHTML = divNumber.innerHTML + parseInt(number);
+
+        if (parseInt(number) == 324) {
+            divNumber.innerHTML = divNumber.innerHTML + "<br /> Liczby są takie same.";
+        }
+        if (number === 324) {
+            divNumber.innerHTML = divNumber.innerHTML + "<br /> Takie same typy?...";
+        } else {
+            divNumber.innerHTML = divNumber.innerHTML + "<br /> To nie są takie same typy...";
+        }
+    </script>
+</body>
+
+</html>
